@@ -1,23 +1,14 @@
 package data;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.validation.constraints.Email;
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotEmpty;
 
-@Entity
+
+
 public class SuperUser {
 
-    @Id
-    @GeneratedValue
+
     Integer id;
-    @NotEmpty
-    @NotBlank(message = "Name can't be left blank!")
     String name;
     String phoneNumber;
-    @Email(message = "Not a valid email!")
     String eMail;
 
     public SuperUser() {

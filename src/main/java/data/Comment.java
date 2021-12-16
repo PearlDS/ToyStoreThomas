@@ -1,19 +1,17 @@
 package data;
 
-import javax.persistence.*;
-import java.sql.Date;
 
-@Entity
+import java.util.Date;
+
 public class Comment {
 
-    @Id
-    @GeneratedValue
+
     Integer id;
-    @ManyToOne
+
     Product product;
     String words;
     Date dayOfComment;
-    @OneToOne
+
     User user;
 
 

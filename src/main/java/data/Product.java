@@ -1,16 +1,13 @@
 package data;
 
-import javax.persistence.*;
+
 import java.util.List;
 
-@Entity
 public class Product {
-    @Id
-    @GeneratedValue
+
     Integer id;
     String title;
     String brand;
-    @OneToMany(mappedBy = "product")
     List<Comment> comments;
     String imageLocation;
 

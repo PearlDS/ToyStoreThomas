@@ -1,17 +1,10 @@
 package data;
 
-import javax.persistence.*;
-
-@Entity
 public class User {
-    @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
+
     Integer id;
-    @Column(nullable = false)
     String userName;
-    @Column(nullable = false)
     String passWord;
-    @OneToOne( cascade = CascadeType.PERSIST)
     ShoppingCart shoppingCart;
 
     public User() {
