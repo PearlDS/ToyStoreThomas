@@ -1,18 +1,24 @@
-package data;
+package toyPackage.data;
 
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import java.util.Date;
 
+@Entity
 public class Comment {
 
-
-    Integer id;
-
-    Product product;
-    String words;
-    Date dayOfComment;
-
-    User user;
+    @Id
+    @GeneratedValue
+    private Integer id;
+    @ManyToOne
+    private Product product;
+    private String words;
+    private Date dayOfComment;
+    @ManyToOne
+    private User user;
 
 
     public Comment() {

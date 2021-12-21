@@ -1,15 +1,20 @@
-package data;
+package toyPackage.data;
 
 
+import javax.persistence.*;
 import java.util.List;
 
+@Entity
 public class Product {
 
-    Integer id;
-    String title;
-    String brand;
-    List<Comment> comments;
-    String imageLocation;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Integer id;
+    private String title;
+    private String brand;
+    @OneToMany(mappedBy = "product", cascade = CascadeType.REMOVE)
+    private List<Comment> comments;
+    private String imageLocation;
 
 
     public Product() {

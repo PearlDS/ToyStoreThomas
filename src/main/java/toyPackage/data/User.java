@@ -1,11 +1,17 @@
-package data;
+package toyPackage.data;
 
+import javax.persistence.*;
+
+@Entity
 public class User {
 
-    Integer id;
-    String userName;
-    String passWord;
-    ShoppingCart shoppingCart;
+    @Id
+    @GeneratedValue
+    private Integer id;
+    private String userName;
+    private String passWord;
+    @OneToOne
+    private ShoppingCart shoppingCart;
 
     public User() {
     }
